@@ -1,6 +1,7 @@
 const express = require('express');
 const db = require('./utils/db');
 const webpush = require('web-push');
+const sendMessageToAll = require('./utils/push-notification');
 
 
 const app = express();
