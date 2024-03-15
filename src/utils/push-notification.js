@@ -21,12 +21,19 @@ async function sendMessageToAll(){
             title: text.title,
             body: text.body,
             icon: 'https://app.voguevista.live/assets/logo/vogue-vista-logo.png',
+            actions: [
+                {
+                    action: 'visit_website',
+                    title: 'Get Offer',
+                    url: 'https://app.voguevista.live', // Replace this with your actual website URL
+                }
+            ]
         },
     };
     lstSubscription.forEach(subscription => {
         webpush.sendNotification(subscription, JSON.stringify(payload), options)
             .then((_) => {
-                console.log('SENT!!!');
+                // console.log('SENT');
             })
             .catch((_) => {
                 console.log(_);
