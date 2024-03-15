@@ -33,7 +33,7 @@ async function sendMessageToAll(){
     lstSubscription.forEach(subscription => {
         webpush.sendNotification(subscription, JSON.stringify(payload), options)
             .then((_) => {
-                // console.log('SENT');
+                console.log('SENT');
             })
             .catch((_) => {
                 console.log(_);
